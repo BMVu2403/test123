@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ</title>
+    <link
+      rel="shortcut icon"
+      href="../assest/img/logo_Phe.webp"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../css/FAQ.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="heading-page">
+        <div class="left-block">
+          <div><img class="logo-uni" src="../assest/img/phe.png" alt="" /></div>
+          <div class="nav-block">
+            <a href="../html/e-course-page.html" class="nav-item">
+              <span>Trang chủ</span>
+            </a>
+            <a href="../html/e-course-page.html" class="nav-item">
+              <span>Dashboard</span>
+            </a>
+            <a href="../html/details-course.html" class="nav-item">
+              <span>Projects</span>
+            </a>
+            <a href="../html/update-infor-course.html" class="nav-item">
+              <span>Tasks</span>
+            </a>
+            <a href="../html/learning-program.html" class="nav-item">
+              <span>Reporting</span>
+            </a>
+            <a href="../html/student-list.html" class="nav-item">
+              <span>Users</span>
+            </a>
+          </div>
+        </div>
+        <div class="right-block">
+          <button class="upgrade-btn">
+            <img
+              style="width: 15px; height: 17px"
+              src="../assest/icon/light-icon.png"
+              alt=""
+            />
+            <span>Upgrade now</span>
+          </button>
+          <div class="setting-block">
+            <img src="../assest/icon/red-gear.png" alt="" />
+          </div>
+          <div class="notification">
+            <img src="../assest/icon/notice-icon.png" alt="" />
+          </div>
+          <div class="avatar-user">
+            <img
+              style="width: 3vw; height: 3vw"
+              src="../assest/img/Avatar-learner3.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <div class="diven"></div>
+
+      <div class="header-main">
+        <div class="list-header">
+          <p
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              color: #667085;
+              font-size: 14px;
+              font-weight: 500;
+            "
+          >
+            <img
+              style="width: 20px; height: 20px"
+              src="../assest/icon/_Breadcrumb button base.png"
+              alt=""
+            />
+            <span style="color: #667085">
+              <a
+                style="text-decoration: none; color: #667085"
+                href="../html/e-course-page.html"
+                >Danh sách khóa học</a
+              ></span
+            >
+          </p>
+          <img
+            style="width: 6px; height: 12px"
+            src="../assest/icon/chevron-right.png"
+            alt=""
+          />
+          <p style="color: #932f08">Thông tin khóa học</p>
+        </div>
+        <div class="head-update">
+          <p>Cập nhật thông tin khóa học</p>
+          <div class="btn-update">
+            <button class="btn-cancel">Hủy</button>
+            <button
+              style="
+                border: 1px solid #d0d5dd;
+                border-radius: 8px;
+                background-color: #ffffff;
+                color: #344054;
+                font-family: Inter;
+                font-weight: 500;
+                font-size: 14px;
+                padding: 10px 16px;
+              "
+            >
+              <span class="review-btn">
+                <img
+                  style="width: 18px; height: 13px"
+                  src="../assest/icon/eyeIcon.png"
+                  alt=""
+                /><span>&#160;&#160;Xem trước giao diện</span>
+              </span>
+            </button>
+            <button class="btn-save-update">Lưu cập nhật</button>
+          </div>
+        </div>
+        <div class="diven"></div>
+      </div>
+      <div class="main">
+        <div class="menu-bar">
+          <span onclick="toUpdateInfor(indexCourse)">Thông tin chung</span>
+          <span onclick="tolearningProgram(indexCourse)"
+            >Chương trình học<span>5</span></span
+          >
+          <span
+            style="background-color: #fff1eb; color: #932f08"
+            onclick="toFAQ(indexCourse)"
+            >FAQ<span
+              class="question-quatity"
+              style="
+                background-color: #ffd3c0;
+                color: #932f08;
+                border: 1px solid #ffd3c0;
+              "
+              >3</span
+            ></span
+          >
+          <span onclick="tostudent(indexCourse)"
+            >Học viên<span class="quatity-learner">25</span></span
+          >
+        </div>
+        <div class="main-content">
+          <div class="head">
+            <div class="head-left">
+              <p>Đầu vào</p>
+              <div class="number-question">5</div>
+            </div>
+            <button onclick="addQuestion()" class="btn-add">
+              <img src="../assest/icon/blue-plus-Icon.png" alt="" /> Thêm câu
+              hỏi
+            </button>
+          </div>
+          <div class="body">
+            <div
+              class="empty-question"
+              style="
+                color: #932f08;
+                font-size: 25px;
+                font-weight: 500;
+                text-align: center;
+                margin-top: 3vw;
+              "
+            ></div>
+            <!-- <div class="block-info">
+              <div class="block-left">
+                <img src="../assest/icon/list-skill.png" alt="" />
+              </div>
+              <div class="block-right">
+                <div class="input-info">
+                  <label for="">Tên câu hỏi</label>
+                  <input type="text" value="Kiến thức chuyên ngành" />
+                </div>
+                <div class="describe">
+                  <label for="">Trả lời</label>
+                  <textarea name="" id=""></textarea>
+                </div>
+                <button class="btn-delete">
+                  <img src="../assest/icon/delete-item.png" alt="" /> Xóa câu
+                  hỏi
+                </button>
+              </div>
+            </div> -->
+            <!-- <div class="block-info">
+              <div class="block-left">
+                <img src="../assest/icon/list-skill.png" alt="" />
+              </div>
+              <div class="block-right">
+                <div class="input-info">
+                  <label for="">Tên câu hỏi </label>
+                  <input type="text" value="Kiến thức chuyên ngành" />
+                </div>
+                <div class="describe">
+                  <label for="">Trả lời</label>
+                  <textarea name="" id="">
+Các kiến thức nền tảng, nguyên lý cơ bản của thuật toán và giải thuật nhằm xây dựng tư duy phân tích, giải quyết và triển khai vấn đề                    </textarea
+                  >
+                </div>
+                <button class="btn-delete">
+                  <img src="../assest/icon/delete-item.png" alt="" /> Xóa câu
+                  hỏi
+                </button>
+              </div>
+            </div> -->
+            <!-- <div class="block-info">
+              <div class="block-left">
+                <img src="../assest/icon/list-skill.png" alt="" />
+              </div>
+              <div class="block-right">
+                <div class="input-info">
+                  <label for="">Tên câu hỏi</label>
+                  <input type="text" value="Kiến thức chuyên ngành" />
+                </div>
+                <div class="describe">
+                  <label for="">Trả lời</label>
+                  <textarea name="" id="">
+Các kiến thức nền tảng, nguyên lý cơ bản của thuật toán và giải thuật nhằm xây dựng tư duy phân tích, giải quyết và triển khai vấn đề                    </textarea
+                  >
+                </div>
+                <button class="btn-delete">
+                  <img src="../assest/icon/delete-item.png" alt="" /> Xóa câu
+                  hỏi
+                </button>
+              </div>
+            </div>
+            <div class="block-info">
+              <div class="block-left">
+                <img src="../assest/icon/list-skill.png" alt="" />
+              </div>
+              <div class="block-right">
+                <div class="input-info">
+                  <label for="">Tên câu hỏi</label>
+                  <input type="text" value="Kiến thức chuyên ngành" />
+                </div>
+                <div class="describe">
+                  <label for="">Trả lời</label>
+                  <textarea name="" id="">
+Các kiến thức nền tảng, nguyên lý cơ bản của thuật toán và giải thuật nhằm xây dựng tư duy phân tích, giải quyết và triển khai vấn đề                    </textarea
+                  >
+                </div>
+                <button class="btn-delete">
+                  <img src="../assest/icon/delete-item.png" alt="" /> Xóa câu
+                  hỏi
+                </button>
+              </div>
+            </div>
+            <div class="block-info">
+              <div class="block-left">
+                <img src="../assest/icon/list-skill.png" alt="" />
+              </div>
+              <div class="block-right">
+                <div class="input-info">
+                  <label for="">Tên câu hỏi</label>
+                  <input type="text" value="Kiến thức chuyên ngành" />
+                </div>
+                <div class="describe">
+                  <label for="">Trả lời</label>
+                  <textarea name="" id="">
+Các kiến thức nền tảng, nguyên lý cơ bản của thuật toán và giải thuật nhằm xây dựng tư duy phân tích, giải quyết và triển khai vấn đề                    </textarea
+                  >
+                </div>
+                <button class="btn-delete">
+                  <img src="../assest/icon/delete-item.png" alt="" /> Xóa câu
+                  hỏi
+                </button>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="alert success">
+      <span><img src="../assest/icon/icon-success.png" alt="" /></span> Cập nhật
+      khóa học thành công!
+    </div>
+    <div class="alert error">
+      <span><img src="../assest/icon/icon-fail.png" alt="" /></span> Tệp vượt
+      quá dung lượng cho phép tải
+    </div>
+    <script src="../js/FAQ.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>

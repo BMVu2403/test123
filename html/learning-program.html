@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cập nhật thông tin - desktop</title>
+  <link rel="shortcut icon" href="../assest/img/logo_Phe.webp" type="image/x-icon" />
+  <link rel="stylesheet" href="../css/learning-program.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="header-page">
+      <div class="left-block">
+        <div><img class="logo-uni" src="../assest/img/phe.png" alt="" /></div>
+        <div class="nav-block">
+          <a href="../html/e-course-page.html" class="nav-item">
+            <span>Trang chủ</span>
+          </a>
+          <a href="../html/e-course-page.html" class="nav-item">
+            <span>Dashboard</span>
+          </a>
+          <a href="../html/details-course.html" class="nav-item">
+            <span>Projects</span>
+          </a>
+          <a href="../html/update-infor-course.html" class="nav-item">
+            <span>Tasks</span>
+          </a>
+          <a href="../html/learning-program.html" class="nav-item">
+            <span>Reporting</span>
+          </a>
+          <a href="../html/student-list.html" class="nav-item">
+            <span>Users</span>
+          </a>
+        </div>
+      </div>
+      <div class="right-block">
+        <button class="upgrade-btn">
+          <img style="width: 15px; height: 17px" src="../assest/icon/light-icon.png" alt="" />
+          <span>Upgrade now</span>
+        </button>
+        <div class="setting-block">
+          <img src="../assest/icon/red-gear.png" alt="" />
+        </div>
+        <div class="notification">
+          <img src="../assest/icon/notice-icon.png" alt="" />
+        </div>
+        <div class="avatar-user">
+          <img style="width: 3vw; height: 3vw" src="../assest/img/Avatar-learner.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <!-- Đường kẻ ngăn 2 phần -->
+    <div class="diven"></div>
+    <!-- Phần chính của trang -->
+    <div class="body-page">
+      <div class="header">
+        <div class="list-header">
+          <p style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                color: #667085;
+                font-size: 14px;
+                font-weight: 500;
+              ">
+            <img style="width: 20px; height: 20px" src="../assest/icon/_Breadcrumb button base.png" alt="" />
+            <span style="color: #667085">
+            <a style="text-decoration: none; color: #667085" href="../html/e-course-page.html">Danh sách khóa học</a></span>
+          </p>
+          <img style="width: 6px; height: 12px" src="../assest/icon/chevron-right.png" alt="" />
+          <p style="color: #932f08">Thông tin khóa học</p>
+        </div>
+        <div class="head-update">
+          <p>Cập nhật thông tin khóa học</p>
+          <div class="btn-update">
+            <button class="btn-cancel">Hủy</button>
+            <button style="
+                  border: 1px solid #d0d5dd;
+                  border-radius: 8px;
+                  background-color: #ffffff;
+                  color: #344054;
+                  font-family: Inter;
+                  font-weight: 500;
+                  font-size: 14px;
+                  padding: 10px 16px;
+                ">
+              <span class="review-btn">
+                <img style="width: 18px; height: 13px" src="../assest/icon/eyeIcon.png" alt="" /><span>&#160;&#160;Xem
+                  trước giao diện</span>
+              </span>
+            </button>
+            <button class="btn-save">Lưu cập nhật</button>
+          </div>
+        </div>
+        <!-- Đường kẻ ngăn 2 phần -->
+        <div class="diven"></div>
+      </div>
+      <!-- Nội dung chính bên cạnh side-bar -->
+      <div class="main">
+        <div class="sidebar">
+          <span onclick="toUpdateInfor(indexCourse)">Thông tin chung</span>
+          <span style="background-color: #fff1eb; color: #932f08" onclick="tolearningProgram(indexCourse)">
+            Chương trình học<span style="background-color: #ffd3c0;color: #932f08;border: 1px solid #ffd3c0;">
+              5</span></span>
+          <span onclick="toFAQ(indexCourse)">FAQ<span class="number-question">3</span></span>
+          <span onclick="tostudent(indexCourse)">Học viên<span class="quatity-learner">25</span></span>
+        </div>
+        <div class="main-content">
+          <div class="head">
+            <div class="head-left">
+              <p>Chương trình học</p>
+              <div class="number-programme">5</div>
+            </div>
+            <button onclick="addItem()" class="btn-add">
+              <img src="../assest/icon/blue-plus-Icon.png" alt="" /> Thêm đầu
+              mục
+            </button>
+          </div>
+          <div class="bodyLearningCourse">
+            <div style="text-align: center; color: #932f08; font-size: 30px; font-weight: 500;" id="empty-inform">Danh sách đầu mục trống</div>
+            <div class="block-infor">
+              <div class="block-left">
+                <img src="../assest/icon/list-skill.png" alt="" />
+              </div>
+              <!-- <div class="block-right">
+                <div class="input-infor">
+                  <label for="">Tên đầu mục</label>
+                  <input type="text" placeholder="Kiến thức chuyên ngành" />
+                </div>
+                <div class="describe">
+                  <label for="">Mô tả</label>
+                  <div class="input-discript">
+                    <textarea></textarea>
+                  </div>
+                </div>
+                <div class="form-learning">
+                  <label for="">Hình thức học</label>
+                  <select id="">
+                    <option value="">Video bài giảng</option>
+                    <option style="cursor: default;" value="">Đọc bài viết / Bài tập về nhà</option>
+                    <option style="cursor: default;" value="">Video bài giảng</option>
+                  </select>
+                </div>
+                <button class="btn-delete">
+                  <img src="../assest/icon/delete-item.png" alt="" /> Xóa đầu
+                  mục
+                </button>
+              </div> -->
+            </div>
+            <!-- Đường kẻ ngăn 2 phần -->
+            <!-- <div class="block-infor">
+              <div class="block-left">
+                <img src="../assest/icon/list-skill.png" alt="" />
+              </div>
+              <div class="block-right">
+                <div class="input-infor">
+                  <label for="">Tên đầu mục</label>
+                  <input type="text" value="Kiến thức chuyên ngành" />
+                </div>
+                <div class="describe">
+                  <label for="">Mô tả</label>
+                  <div class="input-discript">
+                    <textarea>
+- Các kiến thức nền tảng, nguyên lý cơ bản của thuật toán và giải thuật nhằm xây dựng tư duy phân tích, giải quyết và triển khai vấn đề
+- Các ngôn ngữ lập trình: Java, JavaScript, Python và các thư viện, công cụ hỗ trợ nhằm xây dựng, phát triển các ứng dụng và hệ thống phần mềm
+- Các kiến thức về cơ sở dữ liệu và SQL nhằm truy vấn, thao tác và quản lý dữ liệu
+                      </textarea>
+                  </div>
+                </div>
+                <div class="form-learning">
+                  <label style="font-weight: 400; font-size: 16px">Hình thức học</label>
+                  <select id="">
+                    <option value="">Video bài giảng</option>
+                    <option selected value="">
+                      Đọc bài viết / Bài tập về nhà
+                    </option>
+                    <option value="">Video bài giảng</option>
+                  </select> -->
+
+                  <!-- Hình thức học - đọc Bài Viết -->
+                  <!-- <div class="form-learning-lesson">
+                    <div class="title-list-lesson">
+                      <span style="
+                            font-weight: 700;
+                            font-size: 25px;
+                            color: #344054;
+                          ">Danh sách bài viết</span>
+                      <div class="action-lesson">
+                        <span>Ẩn bài </span>
+                        <img style="
+                              width: 13px;
+                              height: 7px;
+                              transform: rotate(180deg);
+                            " src="../assest/icon/chevron-down.png" alt="" />
+                      </div>
+                    </div>
+                    <div class="list-lesson-content">
+                      <div class="lesson-list">
+                        <div class="lesson-item">
+                          <div class="header-lesson">
+                            <img class="list-icon" src="../assest/icon/list-skill.png" alt="list-icon" />
+                            <div class="header-title">
+                              <div class="title">Bài 1</div>
+                              <div class="lesson-action">
+                                <img class="delete-icon" src="../assest/icon/Delete.png" alt="Delete-icon" />
+                                <span>Xóa bài</span>
+                                <img class="acordition-img" src="../assest/icon/chevron-down.png" alt="acordition" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="lesson-content">
+                            <textarea>
+- Các kiến thức nền tảng, nguyên lý cơ bản của thuật toán và giải thuật nhằm xây dựng tư duy phân tích, giải quyết và triển khai vấn đề
+- Các ngôn ngữ lập trình: Java, JavaScript, Python và các thư viện, công cụ hỗ trợ nhằm xây dựng, phát triển các ứng dụng và hệ thống phần mềm
+- Các kiến thức về cơ sở dữ liệu và SQL nhằm truy vấn, thao tác và quản lý dữ liệu
+                            </textarea>
+                          </div>
+                        </div>
+                        <div class="lesson-item">
+                          <div class="header-lesson">
+                            <img class="list-icon" src="../assest/icon/list-skill.png" alt="list-icon" />
+                            <div class="header-title">
+                              <div class="title">Bài 2</div>
+                              <div class="lesson-action">
+                                <img class="delete-icon" src="../assest/icon/Delete.png" alt="Delete-icon" />
+                                <span>Xóa bài</span>
+                                <img class="acordition-img" src="../assest/icon/chevron-down.png" alt="acordition" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="lesson-content">
+                            <textarea>
+- Các kiến thức nền tảng, nguyên lý cơ bản của thuật toán và giải thuật nhằm xây dựng tư duy phân tích, giải quyết và triển khai vấn đề
+- Các ngôn ngữ lập trình: Java, JavaScript, Python và các thư viện, công cụ hỗ trợ nhằm xây dựng, phát triển các ứng dụng và hệ thống phần mềm
+- Các kiến thức về cơ sở dữ liệu và SQL nhằm truy vấn, thao tác và quản lý dữ liệu
+                            </textarea>
+                          </div>
+                        </div>
+                        <div class="lesson-item">
+                          <div class="header-lesson">
+                            <img class="list-icon" src="../assest/icon/list-skill.png" alt="list-icon" />
+                            <div class="header-title">
+                              <div class="title">Bài 3</div>
+                              <div class="lesson-action">
+                                <img class="delete-icon" src="../assest/icon/Delete.png" alt="Delete-icon" />
+                                <span>Xóa bài</span>
+                                <img class="acordition-img" src="../assest/icon/chevron-down.png" alt="acordition" />
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                        <div class="lesson-item">
+                          <div class="header-lesson">
+                            <img class="list-icon" src="../assest/icon/list-skill.png" alt="list-icon" />
+                            <div class="header-title">
+                              <div class="title">Bài 4</div>
+                              <div class="lesson-action">
+                                <img class="delete-icon" src="../assest/icon/Delete.png" alt="Delete-icon" />
+                                <span>Xóa bài</span>
+                                <img class="acordition-img" src="../assest/icon/chevron-down.png" alt="acordition" />
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                      <button>
+                        <img style="width: 11px; height: 11px" src="../assest/icon/plus-dark.png" alt="" />
+                        <span>Thêm bài</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <button class="btn-delete">
+                    <img src="../assest/icon/delete-item.png" alt="delete-item" />
+                    Xóa đầu mục
+                  </button>
+                </div>
+              </div>
+            </div>  -->
+            <!-- Đường kẻ ngăn 2 phần -->
+            <!-- <div class="diven"></div> -->
+
+            <!-- <div class="block-infor">
+              <div class="block-left">
+                <img src="../assest/icon/list-skill.png" alt="" />
+              </div>
+              <div class="block-right">
+                <div class="input-infor">
+                  <label for="">Tên đầu mục</label>
+                  <input type="text" value="Tài liệu chuyên ngành buổi 1" />
+                </div>
+                <div class="describe">
+                  <label for="">Mô tả</label>
+                  <div class="input-discript">
+                    <textarea>
+- Các kiến thức nền tảng, nguyên lý cơ bản của thuật toán và giải thuật nhằm xây dựng tư duy phân tích, giải quyết và triển khai vấn đề
+- Các ngôn ngữ lập trình: Java, JavaScript, Python và các thư viện, công cụ hỗ trợ nhằm xây dựng, phát triển các ứng dụng và hệ thống phần mềm
+- Các kiến thức về cơ sở dữ liệu và SQL nhằm truy vấn, thao tác và quản lý dữ liệu
+                      </textarea>
+                  </div>
+                </div>
+                <div class="form-learning">
+                  <label for="">Hình thức</label>
+                  <select id="">
+                    <option value="">Tài liệu đính kèm</option>
+                    <option value="">Đọc bài viết / Bài tập về nhà</option>
+                    <option value="">Video bài tập</option>
+                  </select>
+                  <div class="form-learning-present">
+
+                    <div class="file-ex">
+                      <div style="display: flex; justify-content:space-between ;">
+                        <img src="../assest/icon/pdf-icon.png" alt="" class="img-pdf">
+                        <img src="../assest/icon/Delete.png" alt="" class="delete-icon">
+                      </div>
+                      <div style="display: flex; flex-direction: column; margin-left: 16px;">
+                        <span style="margin-top: 12px; font-size: 14px;">Bài tập về nhà 1.PDF</span>
+                        <span style="color: #667085;">570 MB</span>
+                      </div>
+                    </div>
+
+                    <div class="file-ex">
+                      <div style="display: flex; justify-content:space-between ;">
+                        <img src="../assest/icon/pdf-icon.png" alt="" class="img-pdf">
+                        <img src="../assest/icon/Delete.png" alt="" class="delete-icon">
+                      </div>
+                      <div style="display: flex; flex-direction: column; margin-left: 16px;">
+                        <span style="margin-top: 12px; font-size: 14px;">Bài tập về nhà 2.PDF</span>
+                        <span style="color: #667085;">218.3 MB</span>
+                      </div>
+                    </div>
+
+                    <div class="file-ex">
+                      <div style="display: flex; justify-content:space-between ;">
+                        <img src="../assest/icon/pdf-icon.png" alt="" class="img-pdf">
+                        <img src="../assest/icon/Delete.png" alt="" class="delete-icon">
+                      </div>
+                      <div style="display: flex; flex-direction: column; margin-left: 16px;">
+                        <span style="margin-top: 12px; font-size: 14px;">Bài tập về nhà siêu khó nâng...</span>
+                        <span style="color: #667085;">570 MB</span>
+                      </div>
+                    </div>
+
+                    <div class="file-ex-up">
+                      <div style="display: flex; justify-content:center ;">
+                        <img src="../assest/icon/Featured icon.png" alt="" class="up-img">
+                      </div>
+                      <div
+                        style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 4px;">
+                        <span style="color: #932F08; font-size: 14px; font-weight: 500;">Tải thêm tệp</span>
+                        <span style="color: #667085; font-size: 12px;">Yêu cầu các định dạng PDF (max.200MB)</span>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <button class="btn-delete">
+                    <img src="../assest/icon/delete-item.png" alt="" /> Xóa đầu
+                    mục
+                  </button>
+                </div>
+              </div>
+
+            </div> -->
+
+            <!-- Đường kẻ ngăn 2 phần -->
+            <!-- <div class="diven"></div> -->
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="alert success">
+      <span><img src="../assest/icon/icon-success.png" alt="" /></span> Cập
+      nhật khóa học thành công!
+    </div>
+    <div class="alert error">
+      <span><img src="../assest/icon/icon-fail.png" alt="" /></span> Tệp
+      vượt quá dung lượng cho phép tải
+    </div>
+  </div>
+  </div>
+  <script src="../js/learning-program.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

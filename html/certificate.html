@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate</title>
+    <link rel="shortcut icon" href="../assest/img/logo_Phe.webp" type="image/x-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/certificate.css">
+</head>
+
+<body>
+    <div class="container-partner">
+        <div class="sidebar">
+            <div class="header">
+                <img src="../assest/img/phe.png" alt="Phenikaa" class="phe">
+                <input type="text" placeholder="Tìm kiếm" class="search">
+
+                <div class="link">
+                    <a href="../html/index.html"><img src="../images/user1.png" alt="" class="img">
+                        <span>Tài khoản</span>
+                    </a>
+
+                    <a href="../html/partner.html"><img src="../assest/icon/Handshake-dark.png" alt="" class="img"
+                            style="width: 24px; height: 20px;">
+                        <span>Đối tác</span>
+                    </a>
+
+                    <a href="../html/e-course-page.html"><img src="../assest/icon/Video.png" alt="" class="img">
+                        <span>Khóa học (E-learning)</span>
+                    </a>
+
+                    <a href=""><img src="../assest/icon/ProjectorScreenChart.png" alt="" class="img">
+                        <span>Lớp học offline</span>
+                    </a>
+
+                    <a href="../html/exam.html"><img src="../assest/icon/Exam.png" alt="" class="img">
+                        <span>Kỳ thi</span>
+                    </a>
+
+                    <a href="" style="background-color: #FFF1EB; border-radius: 5px;"><img
+                            src="../assest/icon/Certificate (1).png" alt="" class="img">
+                        <span style="color: #932F08; font-weight: 500;">Chứng chỉ</span>
+                    </a>
+
+                    <a href=""><img src="../assest/icon/ChartPie.png" alt="" class="img">
+                        <span>Lịch sử thanh toán</span>
+                    </a>
+
+                    <a href=""><img src="../assest/icon/Buildings.png" alt="" class="img">
+                        <span>Cơ sở hạ tầng</span>
+                    </a>
+
+                    <a href=""><img src="../assest/icon/SpeakerSimpleHigh.png" alt="" class="img">
+                        <span>Tin tức, thông báo</span>
+                    </a>
+
+                    <a href=""><img src="../assest/icon/Gear.png" alt="" class="img">
+                        <span>Cấu hình</span>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="footer">
+                <div class="infor">
+                    <img src="../assest/img/avt.jpg" alt="" class="avt">
+                    <div class="textInfor">
+                        <div class="nameandemail">
+                            <div class="name">
+                                <span>Vũ Đình Kiên</span>
+                                <a href="../html/Home-page.html" onclick="logOut()"><span><img
+                                            src="../assest/icon/Log-out.png" alt=""
+                                            style="width: 20px; height: 20px;"></span></a>
+                            </div>
+                            <div class="email">
+                                <span style="color: #667085">kienvu@phenikaa.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="content">
+            <div class="frame1">
+
+                <div class="frame2">
+                    <div class="page">
+                        <a href=""><img src="../assest/icon/_Breadcrumb button base.png" alt=""
+                                style="width: 20px; height: 20px;"></a>
+                        <img src="../assest/icon/chevron-right.png" alt="" style="width: 5px; height: 9px;">
+                        <span style="color: #667085; font-size: 14px;">Tài khoản</span>
+                        <img src="../assest/icon/chevron-right.png" alt="" style="width: 5px; height: 9px;">
+                        <span style="color: #932F08; font-weight: 500; font-size: 14px;">Danh sách chứng chỉ</span>
+                    </div>
+                </div>
+
+                <div class="frame3">
+                    <div class="text" style="font-weight: 500; font-size: 30px;">Danh sách đối tác</div>
+                    <div class="choose">
+                        <button class="btn-1"><img src="../assest/icon/ms_excel.png" alt=""
+                                style="width: 20px; height: 20px;"><span>Tải danh
+                                sách</span></button>
+
+                        <button class="btn-2" onclick="triggerFile()"><span>Nhập từ file</span><img
+                                src="../assest/icon/chevron-down.png" alt="" style="width: 10px; height:6px;"></button>
+                        <input type="file" id="file-input" onchange="handleFile(this)">
+
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" style="width: 178px;">
+                            <img src="../assest/icon/plus.png" alt="" style="width: 20px; height: 20px;"><span>Thêm
+                                chứng chỉ</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="frame4">
+
+                <div class="frame5">
+                    <button class="btn-4"><img src="../assest/icon/Filters-lines.png" alt=""
+                            style="width: 20px;height: 15px;"><span>Bộ
+                            lọc</span></button>
+
+                    <input type="text" placeholder="Tìm kiếm" class="find">
+                </div>
+
+                <div class="frame6" style="width: 100%; padding: 16px;">
+                    <table class="tablecontent" style="border-collapse: collapse;">
+                        <thead>
+                            <tr>
+                                <th style="width: 60px; border-top-left-radius: 10px;  "><input type="checkbox"
+                                        style="width: 20px; height: 20px; margin: 5px 0 0 25px;">
+                                </th>
+                                <th style="width: 110px; font-size: 12px; color: #667085;">Mã chứng chỉ</th>
+                                <th style="width: 834px; font-size: 12px; color: #667085;">Tên chứng chỉ</th>
+                                <th
+                                    style="width: 108px; border-top-right-radius: 10px; font-size: 12px; color: #667085;">
+                                    Chức
+                                    năng</th>
+                            </tr>
+                        </thead>
+                        <tbody id="certificateTableBody">
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4">
+                                    <div class="d-flex justify-content-space-between align-items-center gap-3">
+                                        <button class="btn-bf btn btn-light" id="prevPageButton">
+                                            <img src="../assest/icon/chevron-left.png" alt="Trang trước"
+                                                style="width: 7px; height: 12px;">
+                                            Trang trước
+                                        </button>
+                                        <span id="paginationInfo">Trang 1 trong 152</span>
+                                        <button class="btn-af btn btn-light" id="nextPageButton">
+                                            Trang sau
+                                            <img src="../assest/icon/chevron-right.png" alt="Trang sau"
+                                                style="width: 7px; height: 12px;">
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                </div>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Modal them doi tac-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="border-bottom: none;">
+                    <h5 class="modal-title" id="exampleModalLabel">Thêm chứng chỉ</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="display: flex; gap: 32px;">
+
+                    <form class="form-container" id="certificateForm">
+
+                        <div class="form-group">
+                            <label for="certificate-name" class="form-label">Tên chứng chỉ</label>
+                            <input type="text" id="certificate-name" class="form-input"
+                                placeholder="Nhập tên chứng chỉ">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="certificate-address" class="form-label">Ngày cấp chứng chỉ</label>
+                            <input type="date" id="certificate-date" class="form-input" placeholder="DD/MM/YYYY"
+                                style="background: url('../assest/icon/calendar.png') no-repeat 10px center; background-size: 20px; padding-left: 40px;">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="certificate-describe" class="form-label">Mô tả chứng chỉ</label>
+                            <textarea name="" id="certificate-describe" class="form-input"
+                                placeholder="Nhập mô tả chứng chỉ của bạn"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-primary" id="saveCertificateButton">Thêm chứng chỉ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Xác nhận</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Bạn có chắc chắn muốn xóa chứng chỉ này không?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteButton">Xóa chứng chỉ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="toastDelete">
+        <div class="toast-body">
+            <span class="toast-content"><img src="../assest/icon/Toast Delete.png" alt=""
+                    style="width: 32px; height: 32px;"><span>Đã xóa chứng chỉ</span></span>
+        </div>
+    </div>
+
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="toastSuccess">
+        <div class="toast-body">
+            <span class="toast-content"><img src="../assest/icon/Toast Success.png" alt=""
+                    style="width: 32px; height: 32px;"><span>Thêm chứng chỉ mới thành công !</span></span>
+        </div>
+    </div>
+
+    <!-- Modal HTML -->
+    <div id="expiredModal" class="modal-expire">
+        <div class="modal-backdrop"></div>
+        <div class="modal-expire-content">
+            <h2>Phiên đăng nhập đã hết hạn</h2>
+            <p>Vui lòng đăng nhập lại để tiếp tục sử dụng dịch vụ.</p>
+            <button onclick="redirectToLogin()">Đăng nhập lại</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+    <script src="../js/certificate.js"></script>
+</body>
+
+</html>

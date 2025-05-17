@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Grechen+Fuemen&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sigmar&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+.container {
+  padding: 24px 20px;
+}
+.header-page {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-bottom: 15px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e4e7ec;
+}
+
+.nav-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+}
+.iconHome {
+  width: 20px;
+  height: 20px;
+}
+.iconNav {
+  width: 6px;
+  height: 12px;
+}
+.title-action {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 25px;
+}
+.title-update {
+  font-size: 30px;
+  font-weight: 500;
+}
+.button-page {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.button-page button {
+  width: fit-content;
+  height: fit-content;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+.button-page .review-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.button-page .review-btn img {
+  width: 18px;
+  height: 13px;
+}
+.main-page {
+  display: flex;
+}
+.menu-bar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 2vw;
+}
+.menu-bar span {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  color: #667085;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 8px 13px;
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+}
+.menu-bar span:hover {
+  background-color: #fce7df;
+  border: 1px solid #ffd3c0;
+}
+.menu-bar span span {
+  background-color: #f2f4f7;
+  border: 1px solid #e4e7ec;
+  padding: 2px 8px;
+  border-radius: 16px;
+}
+.body-page {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid#D0D5DD;
+  padding: 24px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+.body-page input:focus {
+  outline: none;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.body-page select:focus {
+  outline: none;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.present-img {
+  position: relative;
+}
+.icon-trash-block {
+  position: absolute;
+  top: 8px;
+  right: 46%;
+  border: 1px solid #f2f4f7;
+  background-color: #f2f4f7;
+  border-radius: 50%;
+  padding: 8px 12px;
+}
+.icon-trash {
+}
+
+.body-page input,
+.body-page select {
+  border: 1px solid#D0D5DD;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-top: 1vh;
+}
+.name-course,
+.learner-course,
+.course-discript,
+.cost-course {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.major-traningCenter {
+  display: flex;
+  gap: 12px;
+}
+.major,
+.training-center {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.course-discript textarea {
+  padding: 8px;
+  height: 15vh;
+  border: 1px solid#D0D5DD;
+  border-radius: 8px;
+}
+.learned-skills {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.learned-skills input {
+  width: 95%;
+}
+.skill-block div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 10px;
+}
+.btn-add-skill {
+  width: 15%;
+  cursor: pointer;
+  padding: 10px 8px;
+  margin-left: 2vw;
+  border: 1px solid#D0D5DD;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+.btn-add-skill:hover {
+  background-color: #f2f4f7;
+}
+.cost-course {
+}
+
+/* Modal overlay */
+.modal-expire {
+  display: none; /* Ẩn mặc định, dùng JS để hiện */
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* nền mờ */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal box */
+#expiredModal {
+  display: none;
+}
+
+.modal-expire-content {
+  margin: 10vw 33%;
+  background-color: #fff;
+  padding: 30px 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Heading */
+.modal-expire-content h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Message */
+.modal-expire-content p {
+  font-size: 16px;
+  margin: 15px 0;
+  color: #555;
+}
+
+/* Button */
+.modal-expire-content button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-expire-content button:hover {
+  background-color: #0056b3;
+}

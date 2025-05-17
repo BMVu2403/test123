@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chi tiết khóa học</title>
+    <link
+      rel="shortcut icon"
+      href="../assest/img/logo_Phe.webp"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../css/details-course.css" />
+  </head>
+  <body>
+    <div class="details-container">
+      <!-- Thanh menu -->
+      <div class="menu-bar">
+        <div class="manager-item">
+          <div class="logo">
+            <img src="../assest/img/phe.png" alt="LogoPhennikaa" />
+          </div>
+          <div class="search-input">
+            <input
+              class="input-search-content"
+              type="text"
+              placeholder="Tìm kiếm"
+            />
+            <span class="place_holder"
+              ><img src="../assest/icon/search.png"
+            /></span>
+          </div>
+          <div class="list-manager">
+            <ul>
+              <li>
+                <a href="../html/index.html"
+                  ><img
+                    class="menu-icon"
+                    src="../assest/icon/users.png"
+                  /><span> Tài khoản</span></a
+                >
+              </li>
+              <li>
+                <a href="../html/partner.html" rel="noopener noreferrer"
+                  ><img
+                    class="menu-icon"
+                    src="../assest/icon/Handshake-dark.png"
+                  /><span> Đối tác</span></a
+                >
+              </li>
+              <li>
+                <a href="../html/e-course-page.html" rel="noopener noreferrer"
+                  ><img
+                    class="menu-icon"
+                    src="../assest/icon/elearning.png"
+                  /><span style="color: #932f08">
+                    Khóa học (E-learning)</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a href="" rel="noopener noreferrer"
+                  ><img
+                    class="menu-icon"
+                    src="../assest/icon/ProjectorScreenChart.png"
+                  /><span> Lớp học offline</span></a
+                >
+              </li>
+              <li>
+                <a href="../html/exam.html"
+                  ><img class="menu-icon" src="../assest/icon/Exam.png" /><span>
+                    Kỳ thi</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a href="../html/certificate.html" rel="noopener noreferrer"
+                  ><img
+                    class="menu-icon"
+                    src="../assest/icon/Certificate.png"
+                  /><span> Chứng chỉ</span></a
+                >
+              </li>
+              <li>
+                <a href="" rel="noopener noreferrer"
+                  ><img
+                    class="menu-icon"
+                    src="../assest/icon/ChartPie.png"
+                  /><span> Báo cáo tài chính</span></a
+                >
+              </li>
+              <li>
+                <a href="" rel="noopener noreferrer"
+                  ><img
+                    class="menu-icon"
+                    src="../assest/icon/Buildings.png"
+                  /><span> Cơ sở hạ tầng</span></a
+                >
+              </li>
+              <li>
+                <a href="" rel="noopener noreferrer">
+                  <img
+                    class="menu-icon"
+                    src="../assest/icon/SpeakerSimpleHigh.png"
+                  /><span> Tin tức, thông báo</span></a
+                >
+              </li>
+              <li>
+                <a href="" rel="noopener noreferrer"
+                  ><img class="menu-icon" src="../assest/icon/Gear.png" /><span>
+                    Cấu hình</span
+                  ></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Accounts -->
+        <div class="Account">
+          <div class="avt-present">
+            <img src="../assest/img/avt.jpg" alt="AvatarUser" />
+          </div>
+          <div class="infor-account">
+            <div class="NameUser">
+              <div class="user-name"></div>
+              <div class="logOut-icon" onclick="logOut()">
+                <img src="../assest/icon/Log-out.png" alt="" />
+              </div>
+            </div>
+            <span class="user-email"></span>
+          </div>
+        </div>
+      </div>
+      <!-- Phần nội dung chính của trang -->
+      <div class="header-detail-page">
+        <div class="nav-header">
+          <img
+            class="iconHome"
+            src="../assest/icon/_Breadcrumb button base.png"
+            alt="HomePage"
+          />
+          <span style="color: #667085">
+            <a
+              style="text-decoration: none; color: #667085"
+              href="../html/e-course-page.html"
+              >Danh sách khóa học</a
+            ></span
+          >
+          <img
+            class="iconNav"
+            src="../assest/icon/chevron-right.png"
+            alt="Nav"
+          />
+          <span style="color: #932f08">Thông tin khóa học</span>
+        </div>
+        <div class="title-buttons">
+          <span class="course-name">Nhập môn lập trình C++</span>
+          <span>
+            <button class="duplicate-course">
+              <img src="../assest/icon/double-course.png" alt="double" /> Nhân
+              bản khóa học
+            </button>
+            <button onclick="updateCourse()" class="update-course">
+              <img src="../assest/icon/paper-edit.png" alt="update-course" />
+              <span>Cập nhật thông tin</span>
+            </button>
+          </span>
+        </div>
+        <div class="main-infor">
+          <div class="title-image">
+            <label class="infor-course" for="">Thông tin chung</label>
+            <img src="../assest/img/Avatar and file upload.png" alt="" />
+          </div>
+          <table>
+            <tr>
+              <td>
+                <label for="">Mã khóa học</label>
+                <div class="course-code">KH002341</div>
+              </td>
+              <td>
+                <label for="">Hình thức học</label>
+                <div class="learning-method">E-Learning</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="">Đối tượng học</label>
+                <div class="learned-object">--</div>
+              </td>
+              <td>
+                <label for="">Mức giá</label>
+                <div><span class="course-cost">--</span> vnđ</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="">Ngành học</label>
+                <div class="major">Công nghệ thông tin</div>
+              </td>
+              <td>
+                <label for="">Trung tâm</label>
+                <div class="training-center">Rikkei Academy</div>
+              </td>
+            </tr>
+          </table>
+          <div class="discription-course">
+            <label for="">Mô tả khóa học</label>
+            <p class="course-discript">
+              Chương trình Đào tạo Kỹ sư Công nghệ thông tin là sự kết hợp giữa
+              nhà trường và doanh nghiệp, giữa nền tảng chuyên môn và thực tế
+              thị trường. Từ đó, giúp sinh viên vững vàng về kiến thức, nắm bắt
+              xu hướng, trở thành thế hệ tân kỹ sư Công nghệ thông tin trong
+              thời đại số.
+            </p>
+          </div>
+          <div class="learned-skill">
+            <label for="">Các kĩ năng được học</label>
+            <ul class="list-skill">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal HTML -->
+    <div id="expiredModal" class="modal-expire">
+      <div class="modal-expire-content">
+        <h2>Phiên đăng nhập đã hết hạn</h2>
+        <p>Vui lòng đăng nhập lại để tiếp tục sử dụng dịch vụ.</p>
+        <button onclick="redirectToLogin()">Đăng nhập lại</button>
+      </div>
+    </div>
+    <script src="../js/detail-course.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>

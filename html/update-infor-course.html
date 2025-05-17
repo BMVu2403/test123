@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cập nhật thông tin khóa học</title>
+    <link
+      rel="shortcut icon"
+      href="../assest/img/logo_Phe.webp"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../css/update-infor-course.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-page">
+        <div class="nav-header">
+          <img
+            class="iconHome"
+            src="../assest/icon/_Breadcrumb button base.png"
+            alt="HomePage"
+          />
+          <span style="color: #667085">
+            <a
+              style="text-decoration: none; color: #667085"
+              href="../html/e-course-page.html"
+              >Danh sách khóa học</a
+            ></span
+          >
+          <img
+            class="iconNav"
+            src="../assest/icon/chevron-right.png"
+            alt="Nav"
+          />
+          <span style="color: #932f08">Thông tin khóa học</span>
+        </div>
+        <div class="title-action">
+          <span class="title-update">Cập nhật thông tin khóa học</span>
+          <div class="button-page">
+            <button
+              class="cancel-update-btn"
+              style="
+                border: 1px solid #d0d5dd;
+                border-radius: 8px;
+                background-color: #ffffff;
+                color: #344054;
+                font-family: Inter;
+                font-weight: 500;
+                font-size: 14px;
+              "
+            >
+              Huỷ
+            </button>
+            <button
+              style="
+                border: 1px solid #d0d5dd;
+                border-radius: 8px;
+                background-color: #ffffff;
+                color: #344054;
+                font-family: Inter;
+                font-weight: 500;
+                font-size: 14px;
+              "
+            >
+              <span class="review-btn">
+                <img src="../assest/icon/eyeIcon.png" alt="" /><span
+                  >Xem trước giao diện</span
+                >
+              </span>
+            </button>
+            <button
+              onclick="setUpdate()"
+              style="
+                width: 120;
+                height: 40;
+                border: 1px solid #039855;
+                background-color: #039855;
+                color: #ffffff;
+                border-radius: 8px;
+              "
+            >
+              Lưu cập nhật
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="main-page">
+        <div class="menu-bar">
+          <span
+            style="background-color: #fff1eb; color: #932f08"
+            onclick="toUpdateInfor(indexCourse)"
+            >Thông tin chung</span
+          >
+          <span onclick="tolearningProgram(indexCourse)"
+            >Chương trình học<span>5</span></span
+          >
+          <span onclick="toFAQ(indexCourse)"
+            >FAQ<span class="number-question">3</span></span
+          >
+          <span onclick="tostudent(indexCourse)"
+            >Học viên<span class="quatity-learner">25</span></span
+          >
+        </div>
+        <div class="body-page">
+          <div style="font-weight: 500; font-size: 18px">Thông tin chung</div>
+          <div class="present-img">
+            <img
+              style="width: 55%; height: 35vh"
+              src="../assest/img/Avatar and file upload.png"
+              alt=""
+            />
+            <div class="icon-trash-block">
+              <img
+                class=".icon-trash"
+                style="width: 16px; height: 18px"
+                src="../assest/icon/delete-item.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="name-course">
+            <label for="Tên khóa học">Tên khóa học</label>
+            <input class="courseName" type="text" id="" />
+          </div>
+          <div class="learner-course">
+            <label for="">Đối tượng học</label>
+            <select class="learned-object">
+              <option>Chưa có nền tảng</option>
+              <option>Mới bắt đầu</option>
+              <option>Bắt đầu</option>
+              <option>Đã bắt đầu</option>
+            </select>
+          </div>
+          <div class="major-traningCenter">
+            <div class="major">
+              <label for="">Ngành nghề</label>
+              <select class="courseMajor">
+                <option>Công nghệ thông tin</option>
+                <option>Quản trị kinh doanh</option>
+                <option>Marketing</option>
+                <option>Thiết kế</option>
+              </select>
+            </div>
+            <div class="training-center">
+              <label for="">Trung tâm đào tạo</label>
+              <select class="training-organize">
+                <option>Rikkei Academy</option>
+                <option>CodeGym</option>
+                <option>FUNiX</option>
+                <option>TechMaster</option>
+                <option>FPT Software</option>
+                <option>FPT</option>
+              </select>
+            </div>
+          </div>
+          <div class="course-discript">
+            <label for="">Mô tả khóa học</label>
+            <textarea class="discription-course" id="">
+Chương trình Đào tạo Kỹ sư Công nghệ thông tin là sự kết hợp giữa nhà trường và doanh nghiệp, giữa nền tảng chuyên môn và thực tế thị trường. Từ đó, giúp sinh viên vững vàng về kiến thức, nắm bắt xu hướng, trở thành thế hệ tân kỹ sư Công nghệ thông tin trong thời đại số</textarea
+            >
+          </div>
+          <div class="learned-skills">
+            <label for="">Các kĩ năng được học</label>
+            <div class="skill-block">
+              <!-- <div class="skill-item">
+                <img
+                  style="width: 8px; height: 16px"
+                  src="../assest/icon/list-skill.png"
+                  alt=""
+                />
+                <input type="text" value="HTML căn bản" id="" />
+                <img
+                  style="width: 17px; height: 17px"
+                  src="../assest/icon/delete-skill.png"
+                  alt=""
+                />
+              </div>
+              <div class="skill-item">
+                <img
+                  style="width: 8px; height: 16px"
+                  src="../assest/icon/list-skill.png"
+                  alt=""
+                />
+                <input type="text" value="HTML căn bản" id="" />
+                <img
+                  style="width: 17px; height: 17px"
+                  src="../assest/icon/delete-skill.png"
+                  alt=""
+                />
+              </div> -->
+
+              <div
+                style="font-size: 14px; color: #932f08"
+                id="error-skill"
+              ></div>
+            </div>
+            <button onclick="addSkill()" class="btn-add-skill">
+              <img
+                style="width: 12px; height: 12px"
+                src="../assest/icon/plus-dark.png"
+                alt=""
+              />&#160;&#160;Thêm kĩ năng
+            </button>
+          </div>
+          <div class="cost-course">
+            <label for="">Mức giá</label>
+            <input class="courseCost" type="text" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal HTML -->
+    <div id="expiredModal" class="modal-expire">
+      <div class="modal-expire-content">
+        <h2>Phiên đăng nhập đã hết hạn</h2>
+        <p>Vui lòng đăng nhập lại để tiếp tục sử dụng dịch vụ.</p>
+        <button onclick="redirectToLogin()">Đăng nhập lại</button>
+      </div>
+    </div>
+    <script src="../js/update-infor-cousre.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>

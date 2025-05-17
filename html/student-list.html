@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danh sách học viên khóa học</title>
+    <link
+      rel="shortcut icon"
+      href="../assest/img/logo_Phe.webp"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../css/student-list.css" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    /> -->
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-page">
+        <div class="nav-header">
+          <img
+            class="iconHome"
+            src="../assest/icon/_Breadcrumb button base.png"
+            alt="HomePage"
+          />
+          <span style="color: #667085">
+            <a
+              style="text-decoration: none; color: #667085"
+              href="../html/e-course-page.html"
+              >Danh sách khóa học</a
+            ></span
+          >
+          <img
+            class="iconNav"
+            src="../assest/icon/chevron-right.png"
+            alt="Nav"
+          />
+          <span style="color: #932f08">Thông tin khóa học</span>
+        </div>
+        <div class="title-action">
+          <span class="title-update">Cập nhật thông tin khóa học</span>
+          <div class="button-page">
+            <button
+              style="
+                border: 1px solid #d0d5dd;
+                border-radius: 8px;
+                background-color: #ffffff;
+                color: #344054;
+                font-family: Inter;
+                font-weight: 500;
+                font-size: 14px;
+              "
+            >
+              Huỷ
+            </button>
+
+            <button
+              class="set-update-student"
+              style="
+                width: 120;
+                height: 40;
+                border: 1px solid #039855;
+                background-color: #039855;
+                color: #ffffff;
+                border-radius: 8px;
+              "
+            >
+              Lưu cập nhật
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="main-page">
+        <div class="menu-bar">
+          <span onclick="toUpdateInfor(indexCourse)">Thông tin chung</span>
+          <span onclick="tolearningProgram(indexCourse)"
+            >Chương trình học<span>5</span></span
+          >
+          <span onclick="toFAQ(indexCourse)"
+            >FAQ<span class="number-question">3</span></span
+          >
+          <span
+            onclick="tostudent(indexCourse)"
+            style="background-color: #fff1eb; color: #932f08"
+            >Học viên<span
+              class="quatity-learner"
+              style="
+                background-color: #ffd3c0;
+                color: #932f08;
+                border: 1px solid #ffd3c0;
+              "
+              >25</span
+            ></span
+          >
+        </div>
+        <div class="body-page">
+          <div class="header-list">
+            <span class="learner-number"
+              >Học viên <span id="quatity-learner">18</span></span
+            >
+            <div class="add-learner-block">
+              <button style="background-color: #ffffff; border-color: #d0d5dd">
+                <img
+                  style="width: 20px; height: 18px"
+                  src="../assest/icon/export-list.png"
+                  alt=""
+                />
+                <span>Tải danh sách excel</span>
+              </button>
+              <button
+                onclick="addLearner()"
+                style="background-color: #eff8ff; border-color: transparent"
+              >
+                <img
+                  style="width: 15px; height: 15px"
+                  src="../assest/icon/blue-plus-Icon.png"
+                  alt=""
+                />
+                <span style="color: #175cd3">Thêm học viên</span>
+              </button>
+            </div>
+          </div>
+          <table class="list-learner">
+            <thead class="thead">
+              <th><input class="checkbox" type="checkbox" /></th>
+              <th>Mã học viên</th>
+              <th>Tên học viên</th>
+              <th>Email</th>
+              <th colspan="2"></th>
+            </thead>
+            <tbody class="tbody">
+              <!-- <tr>
+                <td><input class="checkbox" type="checkbox" /></td>
+                <td>TK002341</td>
+                <td style="display: flex; align-items: center; gap: 12px">
+                  <img
+                    style="width: 35px; height: 35px"
+                    src="../assest/img/Avatar-learner.png"
+                    alt=""
+                  />
+                  <span>Trần Hữu Nam</span>
+                </td>
+                <td style="color: #667085">namtran94@phenikaa.com</td>
+                <td class="deleteIcon">
+                  <img src="../assest/icon/Delete.png" />
+                </td>
+                <td class="editIcon"><img src="../assest/icon/Edit.png" /></td>
+              </tr>
+              <tr>
+                <td><input class="checkbox" type="checkbox" /></td>
+                <td>TK002341</td>
+                <td style="display: flex; align-items: center; gap: 12px">
+                  <img
+                    style="width: 35px; height: 35px"
+                    src="../assest/img/Avatar-learner.png"
+                    alt=""
+                  />
+                  <span>Trần Hữu Nam</span>
+                </td>
+                <td style="color: #667085">namtran94@phenikaa.com</td>
+                <td class="deleteIcon">
+                  <img src="../assest/icon/Delete.png" />
+                </td>
+                <td class="editIcon"><img src="../assest/icon/Edit.png" /></td>
+              </tr>
+              <tr>
+                <td><input class="checkbox" type="checkbox" /></td>
+                <td>TK002341</td>
+                <td style="display: flex; align-items: center; gap: 12px">
+                  <img
+                    style="width: 35px; height: 35px"
+                    src="../assest/img/Avatar-learner.png"
+                    alt=""
+                  />
+                  <span>Trần Hữu Nam</span>
+                </td>
+                <td style="color: #667085">namtran94@phenikaa.com</td>
+                <td class="deleteIcon">
+                  <img src="../assest/icon/Delete.png" />
+                </td>
+                <td class="editIcon"><img src="../assest/icon/Edit.png" /></td>
+              </tr>
+              <tr>
+                <td><input class="checkbox" type="checkbox" /></td>
+                <td>TK002341</td>
+                <td style="display: flex; align-items: center; gap: 12px">
+                  <img
+                    style="width: 35px; height: 35px"
+                    src="../assest/img/Avatar-learner.png"
+                    alt=""
+                  />
+                  <span>Trần Hữu Nam</span>
+                </td>
+                <td style="color: #667085">namtran94@phenikaa.com</td>
+                <td class="deleteIcon">
+                  <img src="../assest/icon/Delete.png" />
+                </td>
+                <td class="editIcon"><img src="../assest/icon/Edit.png" /></td>
+              </tr>
+              <tr>
+                <td><input class="checkbox" type="checkbox" /></td>
+                <td>TK002341</td>
+                <td style="display: flex; align-items: center; gap: 12px">
+                  <img
+                    style="width: 35px; height: 35px"
+                    src="../assest/img/Avatar-learner.png"
+                    alt=""
+                  />
+                  <span>Trần Hữu Nam</span>
+                </td>
+                <td style="color: #667085">namtran94@phenikaa.com</td>
+                <td class="deleteIcon">
+                  <img src="../assest/icon/Delete.png" />
+                </td>
+                <td class="editIcon"><img src="../assest/icon/Edit.png" /></td>
+              </tr> -->
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="8">
+                  <div class="pagination">
+                    <button class="prev-btn">
+                      <img
+                        style="width: 8px; height: 12px"
+                        src="../assest/icon/chevron-left.png"
+                        alt=""
+                      />Trang trước
+                    </button>
+                    <span
+                      >Trang <span class="current-pages">1</span> trong
+                      <span class="total-pages"></span>
+                    </span>
+                    <button class="next-btn">
+                      Trang sau
+                      <img
+                        style="width: 8px; height: 12px"
+                        src="../assest/icon/chevron-right-btn.png"
+                        alt=""
+                      />
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- Modal thêm học viên -->
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h2>Thêm học viên</h2>
+          <span
+            ><img
+              onclick="exitModel()"
+              class="exit-model"
+              src="../assest/icon/x.png"
+              alt="X"
+          /></span>
+        </div>
+
+        <div class="upload-box">
+          <img class="img-upload" src="../assest/icon/Featured icon.png" />
+          <p
+            id="fileName"
+            style="
+              font-style: italic;
+              font-size: 13px;
+              margin-top: 5px;
+              color: #666;
+            "
+          >
+            Chưa chọn ảnh
+          </p>
+          <p>
+            <span class="click-upload" onclick="triggerFileInput()"
+              >Click to upload banner</span
+            >
+            or drag & drop<br />
+            SVG, PNG, JPG or GIF (max. 1200x800px) on
+          </p>
+          <!-- Input file ẩn -->
+          <input
+            type="file"
+            id="avatarInput"
+            class="import-clone"
+            accept="image/png, image/jpeg, image/gif"
+            style="display: none"
+            onchange="previewImage(event)"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="fullname">Họ và tên</label>
+          <input type="text" id="fullname" placeholder="Nhập tên học viên" />
+        </div>
+        <div
+          style="color: #932f08; font-weight: 500; font-size: 16px"
+          class="error-fullname"
+        ></div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email-learner" placeholder="Nhập email" />
+        </div>
+        <div
+          style="color: #932f08; font-weight: 500; font-size: 16px"
+          class="error-email"
+        ></div>
+
+        <div class="form-group">
+          <label for="dob">Ngày sinh</label>
+          <input type="date" id="dob-learner" />
+        </div>
+        <div
+          style="color: #932f08; font-weight: 500; font-size: 16px"
+          class="error-dob"
+        ></div>
+
+        <div class="modal-actions">
+          <button onclick="exitModel()" id="cancel-btn" class="btn btn-cancel">
+            Hủy
+          </button>
+          <button id="add-btn" class="btn btn-submit">Thêm</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/student-list.js"></script>
+  </body>
+</html>

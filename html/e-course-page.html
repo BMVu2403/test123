@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Learning</title>
+    <link
+      rel="shortcut icon"
+      href="../assest/img/logo_Phe.webp"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../css/e-course-page.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Thanh menu -->
+      <div class="menu-bar">
+        <div class="manager-item">
+          <div class="logo">
+            <img src="../assest/img/phe.png" alt="LogoPhennikaa" />
+          </div>
+          <div class="search-input">
+            <input
+              class="input-search-content"
+              type="text"
+              placeholder="Tìm kiếm"
+            />
+            <span class="place_holder"
+              ><img src="../assest/icon/search.png"
+            /></span>
+          </div>
+          <div class="list-manager">
+            <ul>
+              <li>
+                <a href="../html/index.html"
+                  ><img
+                    class="menu-icon"
+                    src="../assest/icon/users.png"
+                  /><span> Tài khoản</span></a
+                >
+              </li>
+              <li>
+                <a href="../html/partner.html" rel="noopener noreferrer"
+                  ><img
+                    class="menu-icon"
+                    src="../assest/icon/Handshake-dark.png"
+                  /><span> Đối tác</span></a
+                >
+              </li>
+              <li>
+                <a href="../html/e-course-page.html" rel="noopener noreferrer"
+                  ><img
+                    class="menu-icon"
+                    src="../assest/icon/elearning.png"
+                  /><span style="color: #932f08">
+                    Khóa học (E-learning)</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a href="" rel="noopener noreferrer"
+                  ><img
+                    class="menu-icon"
+                    src="../assest/icon/ProjectorScreenChart.png"
+                  /><span> Lớp học offline</span></a
+                >
+              </li>
+              <li>
+                <a href="../html/exam.html"
+                  ><img class="menu-icon" src="../assest/icon/Exam.png" /><span>
+                    Kỳ thi</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a href="../html/certificate.html" rel="noopener noreferrer"
+                  ><img
+                    class="menu-icon"
+                    src="../assest/icon/Certificate.png"
+                  /><span> Chứng chỉ</span></a
+                >
+              </li>
+              <li>
+                <a href="" rel="noopener noreferrer"
+                  ><img
+                    class="menu-icon"
+                    src="../assest/icon/ChartPie.png"
+                  /><span> Báo cáo tài chính</span></a
+                >
+              </li>
+              <li>
+                <a href="" rel="noopener noreferrer"
+                  ><img
+                    class="menu-icon"
+                    src="../assest/icon/Buildings.png"
+                  /><span> Cơ sở hạ tầng</span></a
+                >
+              </li>
+              <li>
+                <a href="" rel="noopener noreferrer">
+                  <img
+                    class="menu-icon"
+                    src="../assest/icon/SpeakerSimpleHigh.png"
+                  /><span> Tin tức, thông báo</span></a
+                >
+              </li>
+              <li>
+                <a href="" rel="noopener noreferrer"
+                  ><img class="menu-icon" src="../assest/icon/Gear.png" /><span>
+                    Cấu hình</span
+                  ></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Accounts -->
+        <div class="Account">
+          <div class="avt-present">
+            <img src="../assest/img/avt.jpg" alt="AvatarUser" />
+          </div>
+          <div class="infor-account">
+            <div class="NameUser">
+              <div class="user-name">Trần Hữu Nam</div>
+              <div class="logOut-icon">
+                <img
+                  style="cursor: pointer"
+                  class="logOut"
+                  src="../assest/icon/Log-out.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <span class="user-email">namtran94@phenikaa.com</span>
+          </div>
+        </div>
+      </div>
+      <!-- Phần nội dung chính và danh sách -->
+      <div class="main-content">
+        <div class="header-content">
+          <!-- Khối chuyển hướng -->
+          <div class="manage-page">
+            <span class="icon-home"
+              ><img src="../assest/icon/_Breadcrumb button base.png"
+            /></span>
+            <span style="color: #932f08">
+              <a
+                style="text-decoration: none; color: #932f08"
+                href="../html/e-course-page.html"
+                >Danh sách khóa học</a
+              ></span
+            >
+          </div>
+          <!-- Khối title và các button -->
+          <div class="title-block">
+            <span class="title-list">Danh sách khóa học</span>
+            <div class="button-action">
+              <button onclick="triggerFileInput()" class="import-list">
+                <img src="../assest/icon/ms_excel.png" />Tải danh sách
+              </button>
+              <!-- Input file ẩn -->
+              <input
+                type="file"
+                class="import-clone"
+                accept=".csv, .txt, xlsx, .xls"
+                style="display: none"
+                onchange="importCourse()"
+              />
+
+              <div class="select-input">
+                <select class="import-select">
+                  <option selected value="">Nhập từ file</option>
+                  <option value="">upload file</option>
+                  <option value="">tải template</option>
+                </select>
+                <!-- <img
+                  style="width: 10px; height: 6px"
+                  class="chevron-down"
+                  src="../assest/icon/chevron-down.png"
+                  alt=""
+                /> -->
+              </div>
+              <button onclick="addCourseToList()" class="add-course">
+                <img
+                  style="width: 12px; height: 12px"
+                  src="../assest/icon/plus.png"
+                  alt=""
+                />
+                Thêm khóa học
+              </button>
+            </div>
+          </div>
+          <!-- Khối bộ lọc -->
+          <div class="filter-list">
+            <ul>
+              <li class="block-active" id="total-course">
+                Tất cả
+                <span></span>
+              </li>
+              <li class="block-inactive" id="IT-course">CNTT <span></span></li>
+              <li class="block-inactive" id="mkt-course">
+                Marketing <span></span>
+              </li>
+              <li class="block-inactive" id="design-course">
+                Thiết kế <span></span>
+              </li>
+            </ul>
+          </div>
+          <!-- Khối lọc và tìm kiếm -->
+          <div class="filter-search">
+            <button class="btn-filter">
+              <img src="../assest/icon/Filters-lines.png" /> Bộ lọc
+            </button>
+            <div class="search-input-main">
+              <input
+                type="text"
+                class="input-search-block"
+                placeholder="Tìm kiếm"
+                onkeyup="searchCourse()"
+              />
+              <div class="search-placeholder">
+                <img src="../assest/icon/search.png" />
+              </div>
+            </div>
+          </div>
+          <div class="seach-result-block">
+            <div>
+              <span>Tìm thấy: </span>
+              <span class="result-search">2</span>
+              <span>khóa học</span>
+            </div>
+          </div>
+          <!-- Table danh sách khóa học -->
+          <table class="list-course">
+            <thead class="thead">
+              <th><input class="checkbox" type="checkbox" /></th>
+              <th>Mã khóa học</th>
+              <th>Tên khóa học</th>
+              <th>Tên đối tác</th>
+              <th>Số bài học</th>
+              <th>Thời lượng</th>
+              <th colspan="2"></th>
+            </thead>
+            <tbody class="tbody">
+              <!-- <tr>
+                <td><input class="checkbox" type="checkbox" /></td>
+                <td>TK002341</td>
+                <td>
+                  <a
+                    style="text-decoration: none; color: #101828"
+                    href="../html/update-infor-course.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Nhập môn lập trình C++</a
+                  >
+                </td>
+                <td>FPT Software</td>
+                <td>24</td>
+                <td>2</td>
+                <td class="deleteIcon">
+                  <img src="../assest/icon/Delete.png" />
+                </td>
+                <td class="editIcon"><img src="../assest/icon/Edit.png" /></td>
+              </tr>
+              <tr>
+                <td><input class="checkbox" type="checkbox" /></td>
+                <td>TK002341</td>
+                <td>
+                  <a
+                    style="text-decoration: none; color: #101828"
+                    href="../html/update-infor-course.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Nhập môn lập trình Python
+                  </a>
+                </td>
+                <td>Rikkei Academy</td>
+                <td>32</td>
+                <td>2</td>
+                <td class="deleteIcon">
+                  <img src="../assest/icon/Delete.png" />
+                </td>
+                <td class="editIcon">
+                  <img src="../assest/icon/Edit.png" />
+                </td>
+              </tr>
+              <tr>
+                <td><input class="checkbox" type="checkbox" /></td>
+                <td>TK002341</td>
+                <td>
+                  <a
+                    style="text-decoration: none; color: #101828"
+                    href="../html/update-infor-course.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Nhập môn lập trình Python
+                  </a>
+                </td>
+                <td>FPT</td>
+                <td>16</td>
+                <td>3</td>
+                <td class="deleteIcon">
+                  <img src="../assest/icon/Delete.png" />
+                </td>
+                <td class="editIcon">
+                  <img src="../assest/icon/Edit.png" />
+                </td>
+              </tr>
+              <tr>
+                <td><input class="checkbox" type="checkbox" /></td>
+                <td>TK002341</td>
+                <td>Nhập môn lập trình C++</td>
+                <td>FPT Software</td>
+                <td>24</td>
+                <td>2</td>
+                <td class="deleteIcon">
+                  <img src="../assest/icon/Delete.png" />
+                </td>
+                <td class="editIcon"><img src="../assest/icon/Edit.png" /></td>
+              </tr>
+              <tr>
+                <td><input class="checkbox" type="checkbox" /></td>
+                <td>TK002341</td>
+                <td>Nhập môn lập trình C++</td>
+                <td>FPT Software</td>
+                <td>24</td>
+                <td>2</td>
+                <td class="deleteIcon">
+                  <img src="../assest/icon/Delete.png" />
+                </td>
+                <td class="editIcon">
+                  <img src="../assest/icon/Edit.png" />
+                </td>
+              </tr> -->
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="8">
+                  <div class="pagination">
+                    <button class="prev-btn">
+                      <img
+                        style="
+                          width: 8px;
+                          height: 12px;
+                          transform: rotate(180deg);
+                        "
+                        src="../assest/icon/chevron-right-btn.png"
+                        alt=""
+                      />Trang trước
+                    </button>
+                    <span
+                      >Trang <span class="current-pages">1</span> trong
+                      <span class="total-pages"></span>
+                    </span>
+                    <button class="next-btn">
+                      Trang sau
+                      <img
+                        style="width: 8px; height: 12px"
+                        src="../assest/icon/chevron-right-btn.png"
+                        alt=""
+                      />
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- model add course -->
+    <div class="model-add-course">
+      <div class="overlay-model-course"></div>
+      <div class="around">
+        <div class="around-header">
+          <h2>Thêm khoá học</h2>
+          <span
+            ><img
+              onclick="exitModel()"
+              class="exit-model"
+              src="../assest/icon/x.png"
+              alt="X"
+          /></span>
+        </div>
+        <div class="around-body">
+          <div class="around-left">
+            <p>
+              <b>Thông tin chung</b><br />
+
+              <span>Cập nhật thông tin cơ bản về khoá học</span>
+            </p>
+          </div>
+          <div class="around-right">
+            <div class="modal">
+              <div class="modal-body">
+                <div class="upload-box">
+                  <img
+                    class="img-upload"
+                    src="../assest/icon/Featured icon.png"
+                  />
+                  <p>
+                    <span class="click-upload" onclick="triggerFileInput()"
+                      >Click to upload banner</span
+                    >
+                    or drag & drop<br />
+                    SVG, PNG, JPG or GIF (max. 1200x800px) on
+                  </p>
+                  <!-- Input file ẩn -->
+                  <input
+                    type="file"
+                    class="import-clone"
+                    accept=".csv, .txt, xlsx, .xls"
+                    style="display: none"
+                    onchange="importCourse()"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Tên khóa học</label>
+                  <input
+                    class="input-course-name"
+                    style="width: 100%"
+                    type="text"
+                    placeholder="Nhập tên khóa học"
+                  />
+                </div>
+                <table class="infor-course">
+                  <tr>
+                    <td>
+                      <label>Đối tượng học</label>
+                      <br />
+                      <select class="study-object">
+                        <option value="0" selected>Chọn đối tượng học</option>
+                        <option>Chưa có nền tảng</option>
+                        <option>Mới bắt đầu</option>
+                        <option>Bắt đầu</option>
+                        <option>Đã bắt đầu</option>
+                      </select>
+                    </td>
+                    <td>
+                      <label>Ước tính giờ học</label>
+                      <br />
+                      <input
+                        class="hours-learning"
+                        type="text"
+                        placeholder="12"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label>Ngành nghề</label>
+                      <br />
+                      <select class="major">
+                        <option value="0" selected>Chọn ngành đào tạo</option>
+                        <option>Công nghệ thông tin</option>
+                        <option>Quản trị kinh doanh</option>
+                        <option>Marketing</option>
+                        <option>Thiết kế</option>
+                      </select>
+                    </td>
+                    <td>
+                      <label>Trung tâm</label>
+                      <br />
+                      <select class="organization">
+                        <option value="0" selected>Trung tâm đào tạo</option>
+                        <option>Rikkei Academy</option>
+                        <option>CodeGym</option>
+                        <option>FUNiX</option>
+                        <option>TechMaster</option>
+                        <option>FPT Software</option>
+                        <option>FPT</option>
+                      </select>
+                    </td>
+                  </tr>
+                </table>
+                <div class="course-discript">
+                  <label>Mô tả khoá học</label>
+                  <input
+                    class="discription"
+                    type="text"
+                    placeholder="Nhập mô tả khóa học của bạn"
+                  />
+                </div>
+
+                <div class="form-group-skill">
+                  <label>Các kỹ năng được học</label>
+                  <div class="skill-block">
+                    <div class="list-skill-input"></div>
+
+                    <button onclick="addSkill()" class="add-skill">
+                      <img src="../assest/icon/plus-dark.png" alt="" />
+                      <span>Thêm kỹ năng</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Mức giá</label>
+                  <br />
+                  <input
+                    class="course-cost"
+                    type="text"
+                    placeholder="Nhập giá tiền khóa học"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="around-footer">
+          <div class="error-model"></div>
+          <button onclick="exitModel()" class="cancel-btn">Hủy</button>
+          <button class="submit-btn">Tạo khóa học</button>
+        </div>
+      </div>
+    </div>
+    <!-- Model xác nhận xóa -->
+    <div class="model-delete-course">
+      <div class="overlay-model-delete"></div>
+      <div class="around-delete">
+        <div class="around-header-delete">
+          <h2>Xóa khóa học</h2>
+        </div>
+        <div class="around-body-delete">
+          <p>
+            Bạn có chắc chắn muốn xóa
+            <span style="font-style: italic" class="courseDelName"></span> này
+            không?
+          </p>
+        </div>
+        <div class="around-footer-delete">
+          <button class="cancel-delete-btn">Hủy</button>
+          <button class="confirm-delete-btn">Xóa khóa học</button>
+        </div>
+      </div>
+    </div>
+    <!-- Modal HTML -->
+    <div id="expiredModal" class="modal-expire">
+      <div class="modal-expire-content">
+        <h2>Phiên đăng nhập đã hết hạn</h2>
+        <p>Vui lòng đăng nhập lại để tiếp tục sử dụng dịch vụ.</p>
+        <button onclick="redirectToLogin()">Đăng nhập lại</button>
+      </div>
+    </div>
+    <script src="../js/e-course-page.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  </body>
+</html>

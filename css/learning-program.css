@@ -1,0 +1,550 @@
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Grechen+Fuemen&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sigmar&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+.container {
+  padding: 24px 20px;
+}
+.header-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 1vw 2vw; */
+}
+.left-block {
+  display: flex;
+  gap: 19px;
+}
+.logo-uni {
+  width: 10vw;
+  height: 5vh;
+}
+.nav-block {
+  display: flex;
+  gap: 1vw;
+}
+.nav-item {
+  text-decoration: none;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 16px;
+  color: #414c5f;
+}
+.nav-item:hover {
+  opacity: 0.8;
+  transform: scale(1.02);
+}
+.right-block {
+  display: flex;
+  gap: 16px;
+}
+.upgrade-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #344054;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.upgrade-btn:hover {
+  transform: scale(1.02);
+  opacity: 0.8;
+}
+.setting-block {
+  height: fit-content;
+  padding: 8px 10px;
+  border: 1px solid #fff1eb;
+  border-radius: 6px;
+  background-color: #fff1eb;
+}
+.setting-block img {
+  width: 19px;
+  height: 19px;
+}
+.notification {
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+}
+.notification img {
+  width: 15px;
+  height: 17px;
+}
+/* .avatar-user {
+} */
+
+.header-main {
+  width: 100%;
+  height: fit-content;
+}
+
+.header .list-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header .head-update {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .head-update p {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 38px;
+}
+
+.head-update .btn-update {
+  padding-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.head-update .btn-cancel {
+  height: 40px;
+  width: 59px;
+  border-radius: 8px;
+  border: 1px solid #d0d5dd;
+  background-color: white;
+  cursor: pointer;
+}
+
+.btn-cancel:hover {
+  background-color: rgb(194, 194, 194);
+}
+
+.head-update .btn-save {
+  background-color: #039855;
+  color: white;
+  border: 1px solid transparent;
+  height: 40px;
+  width: 120px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-save:hover {
+  background-color: #07693d;
+}
+
+.diven {
+  border: 1px solid #e6e9ec;
+  margin: 1vw 0px;
+}
+.main {
+  display: flex;
+}
+.sidebar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.sidebar span {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  color: #667085;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 8px 13px;
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+}
+.sidebar span:hover {
+  background-color: #fce7df;
+  border: 1px solid #ffd3c0;
+}
+.sidebar span span {
+  background-color: #f2f4f7;
+  border: 1px solid #e4e7ec;
+  padding: 2px 8px;
+  border-radius: 16px;
+}
+
+.main-content {
+  flex: 5;
+  padding: 16px;
+}
+
+.main-content .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.main-content .head .head-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.main-content .head .head-left p {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  color: #101828;
+}
+
+.main-content .head .head-left div {
+  width: 24px;
+  height: 22px;
+  background-color: #fff1eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #932f08;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.main-content .head .btn-add img {
+  width: 12px;
+  height: 12px;
+}
+
+.head .btn-add {
+  width: 156px;
+  height: 36px;
+  color: #175cd3;
+  border-radius: 8px;
+  background-color: #eff8ff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn-add:hover {
+  background-color: #cfe9fc;
+}
+.bodyLearningCourse {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.bodyLearningCourse .block-infor {
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.bodyLearningCourse .block-left {
+  flex: 1;
+}
+
+.bodyLearningCourse .block-left img {
+  width: 10px;
+  height: 16px;
+  margin-top: 14px;
+}
+
+.bodyLearningCourse .block-right {
+  flex: 30;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-bottom: 1px solid #d0d5dd;
+  padding-bottom: 12px;
+}
+
+.bodyLearningCourse .block-right .input-infor {
+  display: flex;
+  flex-direction: column;
+}
+
+.bodyLearningCourse .block-right label {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #344054;
+  margin-bottom: 6px;
+}
+
+.bodyLearningCourse .block-right .input-infor input,
+.bodyLearningCourse .block-right .form-learning select {
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  height: 44px;
+  padding-left: 14px;
+}
+
+.block-right .describe textarea {
+  width: 100%;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  height: 20vh;
+  padding: 12px;
+  font-size: 14x;
+  line-height: 1.5;
+  resize: vertical;
+}
+.bodyLearningCourse .block-right .form-learning {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+/* Dạng bài học qua video */
+.form-learning-present {
+  border: 1px solid #e4e7ec;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 1%;
+  padding: 1%;
+}
+.form-learning-present .video-thumnail {
+  width: 20%;
+  height: 90%;
+}
+
+.form-learning-present .present-discript {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.form-learning-present .btn-base {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1%;
+}
+.form-learning-present .btn-base button {
+  padding: 8px 14px;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.form-learning-present .btn-base button:hover {
+  transform: scale(1.02);
+  background-color: #dee8eb75;
+}
+/* Dạng bài học qua đọc bài viết và bài tập về nhà */
+.form-learning-lesson {
+}
+.title-list-lesson {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #f2f4f7;
+  background-color: #f2f4f7;
+  padding: 10px;
+}
+.title-list-lesson .action-lesson {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+  color: #667085;
+}
+.list-lesson-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background-color: #f9fafb;
+  padding: 20px 24px;
+  /* display: none; */
+}
+
+.list-lesson-content button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-left: 2vw;
+  width: 15%;
+  padding: 10px 16px;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  background-color: #ffffff;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+}
+.list-lesson-content button:hover {
+  transform: scale(1.05);
+  background-color: #f2f6f6;
+}
+
+.lesson-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.lesson-item {
+  /* padding: 12px 16px; */
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  justify-content: space-between;
+}
+.lesson-item .header-lesson {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+.lesson-item .header-lesson .list-icon {
+  width: 10px;
+  height: 16px;
+}
+.lesson-item .header-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e4e7ec;
+  border: 1px solid #e4e7ec;
+  padding: 8px;
+  border-radius: 8px;
+  width: 100%;
+}
+.lesson-item .header-title .title {
+  font-weight: 500;
+  font-style: italic;
+  font-size: 16px;
+}
+.lesson-item .header-title .lesson-action {
+  font-weight: 500;
+  font-size: 14px;
+  color: #667085;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+.lesson-item .header-title .lesson-action .delete-icon {
+  width: 25px;
+  height: 27px;
+}
+.lesson-item .header-title .lesson-action .acordition-img {
+  width: 13px;
+  height: 7px;
+  transform: rotate(180deg);
+}
+.lesson-item .lesson-content {
+  width: 100%;
+  display: none; /*Để áp dụng phần acordition */
+  padding-left: 1.8vw;
+}
+.lesson-item .lesson-content textarea {
+  width: 100%;
+  height: 10vw;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.bodyLearningCourse .btn-delete {
+  float: left;
+  background-color: #fef3f2;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  color: #b42318;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  width: 15%;
+}
+
+.btn-delete:hover {
+  background-color: #ffdfdf;
+}
+
+.bodyLearningCourse .btn-delete img {
+  width: 25px;
+  height: 27px;
+  margin-right: 2px;
+}
+
+.alert {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 12px;
+  display: none;
+}
+
+.alert span img {
+  width: 20px;
+  height: 20px;
+  align-self: center;
+}
+
+.success {
+  background-color: #f0fff4;
+  border: 1px solid #38a169;
+  color: #2f855a;
+}
+
+.error {
+  background-color: #fff5f5;
+  border: 1px solid #e53e3e;
+  color: #c53030;
+}
+
+.img-pdf {
+  width: 48px;
+  height: 48px;
+  margin: 8px 0 0 16px;
+}
+
+.delete-icon {
+  width: 20px;
+  height: 20px;
+  margin: 12px;
+}
+
+.file-ex {
+  background-color: #f2f4f7;
+  width: 100%;
+  height: 118px;
+  border-radius: 8px;
+}
+
+.file-ex-up {
+  background-color: #f9fafb;
+  width: 100%;
+  height: 118px;
+  border-radius: 8px;
+  border: 2px dashed #d0d5dd;
+}
+
+.up-img {
+  width: 40px;
+  height: 40px;
+  margin: 8px 99px 0;
+}
