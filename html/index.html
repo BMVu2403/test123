@@ -778,10 +778,27 @@
         </span>
         <span class="toast__message">Đã xóa tài khoản</span>
     </div> -->
-
+    <script>
+      // Đảm bảo cập nhật thông tin tài khoản đăng nhập vào sidebar sau khi DOM đã sẵn sàng
+      const logingAccount = JSON.parse(localStorage.getItem("logingAccount"));
+      console.log(logingAccount);
+      if (logingAccount) {
+        // Tên
+        const nameEl = document.querySelector(".sidebar__profile-name");
+        if (nameEl) {
+          nameEl.textContent = logingAccount.username;
+        }
+        // Email
+        const emailEl = document.querySelector(".sidebar__profile-email");
+        if (emailEl) {
+          emailEl.textContent = logingAccount.userEmail;
+        }
+      }
+    </script>
     <!-- JS cơ bản để bật/tắt Modal -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <script src="../js/account-list.js" defer></script>
     <script src="../js/main.js" defer></script>
+    <script src="../js/exam.account.js" defer></script>
   </body>
 </html>

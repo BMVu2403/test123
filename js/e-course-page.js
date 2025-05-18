@@ -134,6 +134,45 @@ let start = 0; // Biến cho vị trí bắt đầu
 let end = 4; // Biến cho vị trí kết thúc
 // Mặc định giá trị bắt đầu vfa kết thúc cho danh sách trang đầu tiên
 
+// Khởi tạo 2 khóa học mẫu nếu localStorage chưa có dữ liệu
+if (!localStorage.getItem('courseList')) {
+    const defaultCourses = [
+        {
+            id: 1,
+            courseName: "Nhập môn lập trình C++",
+            courseCode: "KH052424",
+            organization: "FPT Software",
+            courseImg: "../assest/img/course1.png",
+            courseCost: 1000000,
+            hours: 24,
+            learningDuration: 2,
+            learningMethod: "E-learning",
+            learnedSkill: [],
+            learnObject: "Mới bắt đầu",
+            major: "Công nghệ thông tin",
+            courseDiscript: "Khóa học cung cấp kiến thức nền tảng về ngôn ngữ lập trình C++, giúp người học làm quen với tư duy lập trình và cấu trúc cơ bản của chương trình.",
+            learnerCourse: []
+        },
+        {
+            id: 2,
+            courseName: "Nhập môn lập trình Python",
+            courseCode: "KH052425",
+            organization: "Rikkei Academy",
+            courseImg: "../assest/img/course1.png",
+            courseCost: 1000000,
+            hours: 30,
+            learningDuration: 3,
+            learningMethod: "E-learning",
+            learnedSkill: [],
+            learnObject: "Mới bắt đầu",
+            major: "Công nghệ thông tin",
+            courseDiscript: "Khóa học hướng dẫn lập trình cơ bản với Python, phù hợp với người mới bắt đầu trong lĩnh vực lập trình và phân tích dữ liệu.",
+            learnerCourse: []
+        }
+    ];
+    localStorage.setItem('courseList', JSON.stringify(defaultCourses));
+}
+
 // Kiểm tra trạng thái đăng nhập
 if (loginStatus) {
     console.log("Đã đăng nhập");

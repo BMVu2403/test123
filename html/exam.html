@@ -446,8 +446,7 @@
             <div class="form-group">
               <label for="examCourse" class="form__label">Khóa học</label>
               <select id="examCourse" name="examCourse" class="form__select">
-                <option>Nhập môn lập trình C++ KH052424</option>
-                <option>Nhập môn lập trình Python KH052425</option>
+                <!-- Options sẽ được render động bằng JS -->
               </select>
             </div>
             <div class="form-group">
@@ -538,23 +537,6 @@
         </div>
       </div>
     </div>
-    <script>
-      // Modal logic
-      document.getElementById("openExamModalBtn").onclick = function () {
-        document.getElementById("examModal").classList.remove("hidden");
-      };
-      document.getElementById("closeExamModalBtn").onclick = function () {
-        document.getElementById("examModal").classList.add("hidden");
-      };
-      document.getElementById("cancelExamModalBtn").onclick = function () {
-        document.getElementById("examModal").classList.add("hidden");
-      };
-      document.getElementById("createExamForm").onsubmit = function (e) {
-        e.preventDefault();
-        // Xử lý tạo kỳ thi ở đây
-        document.getElementById("examModal").classList.add("hidden");
-      };
-    </script>
     <script src="../js/exam.account.js"></script>
   </body>
 </html>

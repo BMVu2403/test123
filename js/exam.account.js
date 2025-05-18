@@ -9,7 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const cancelExamModalBtn = document.getElementById('cancelExamModalBtn');
     const createExamForm = document.getElementById('createExamForm');
     const modalTitle = document.querySelector('.exam-modal__title');
-    const submitBtn = createExamForm.querySelector('.modal__footer-button--submit');
+    let submitBtn = null;
+    if (createExamForm) {
+        submitBtn = createExamForm.querySelector('.modal__footer-button--submit');
+    }
     const searchInput = document.querySelector('.filters-search__search-input');
 
     // Kỳ thi mẫu nếu localStorage rỗng
@@ -100,6 +103,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Mở modal tạo/sửa
     function openModal(isEdit = false, exam = null) {
+        // Render danh sách khóa học vào select
+        if (!createExamForm) return;
+        const courseSelect = createExamForm.examCourse;
+        const courseList = JSON.parse(localStorage.getItem('courseList')) || [];
+        courseSelect.innerHTML = '';
+        if (courseList.length > 0) {
+            courseList.forEach(course => {
+                const option = document.createElement('option');
+                option.value = course.courseName + ' ' + (course.courseCode || '');
+                option.textContent = course.courseName + (course.courseCode ? ' ' + course.courseCode : '');
+                courseSelect.appendChild(option);
+            });
+        } else {
+            const option = document.createElement('option');
+            option.value = '';
+            option.textContent = 'Không có khóa học nào';
+            courseSelect.appendChild(option);
+        }
+        // Nếu là edit thì set value, còn không thì reset
         examModal.classList.remove('hidden');
         if (isEdit && exam) {
             modalTitle.textContent = 'Sửa kỳ thi';
@@ -107,11 +129,11 @@ document.addEventListener('DOMContentLoaded', function() {
             createExamForm.examName.value = exam.name;
             createExamForm.examDate.value = exam.date;
             createExamForm.examDesc.value = exam.description || '';
-            submitBtn.textContent = 'Cập nhật';
+            if (submitBtn) submitBtn.textContent = 'Cập nhật';
         } else {
             modalTitle.textContent = 'Thêm kỳ thi';
             createExamForm.reset();
-            submitBtn.textContent = 'Tạo kỳ thi';
+            if (submitBtn) submitBtn.textContent = 'Tạo kỳ thi';
         }
     }
 
@@ -120,66 +142,70 @@ document.addEventListener('DOMContentLoaded', function() {
         examModal.classList.add('hidden');
         editExamId = null;
     }
+    console.log('closeExamModalBtn:', closeExamModalBtn);
+    console.log('cancelExamModalBtn:', cancelExamModalBtn);
+    if (closeExamModalBtn) closeExamModalBtn.onclick = closeModal;
+    if (cancelExamModalBtn) cancelExamModalBtn.onclick = closeModal;
 
     // Xử lý submit form
-    createExamForm.onsubmit = function(e) {
-        e.preventDefault();
-        const course = createExamForm.examCourse.value.trim();
-        const name = createExamForm.examName.value.trim();
-        const date = createExamForm.examDate.value;
-        const description = createExamForm.examDesc.value.trim();
-        let partner = '';
-        if (course.includes('C++')) partner = 'FPT Software';
-        else if (course.includes('Python')) partner = 'Rikkei Academy';
-        else partner = 'FPT';
-        const today = new Date().toISOString().slice(0,10);
-        const status = date >= today ? 'Đang diễn ra' : 'Hoàn thành';
+    if (createExamForm) {
+        createExamForm.onsubmit = function(e) {
+            e.preventDefault();
+            const course = createExamForm.examCourse.value.trim();
+            const name = createExamForm.examName.value.trim();
+            const date = createExamForm.examDate.value;
+            const description = createExamForm.examDesc.value.trim();
+            let partner = '';
+            if (course.includes('C++')) partner = 'FPT Software';
+            else if (course.includes('Python')) partner = 'Rikkei Academy';
+            else partner = 'FPT';
+            const today = new Date().toISOString().slice(0,10);
+            const status = date >= today ? 'Đang diễn ra' : 'Hoàn thành';
 
-        // Validate chi tiết
-        const errors = [];
-        if (!course) errors.push('Vui lòng chọn khóa học!');
-        if (!name) errors.push('Tên kỳ thi không được để trống!');
-        if (!date) errors.push('Ngày thi không được để trống!');
-        if (!description) errors.push('Mô tả kỳ thi không được để trống!');
-        if (date && date < today) errors.push('Ngày thi phải lớn hơn hoặc bằng ngày hiện tại!');
+            // Validate chi tiết
+            const errors = [];
+            if (!course) errors.push('Vui lòng chọn khóa học!');
+            if (!name) errors.push('Tên kỳ thi không được để trống!');
+            if (!date) errors.push('Ngày thi không được để trống!');
+            if (!description) errors.push('Mô tả kỳ thi không được để trống!');
+            if (date && date < today) errors.push('Ngày thi phải lớn hơn hoặc bằng ngày hiện tại!');
 
-        // Kiểm tra trùng lặp tên kỳ thi
-        if (name && exams.some(exam => exam.name === name && exam.id !== editExamId)) {
-            errors.push('Tên kỳ thi đã tồn tại trong hệ thống!');
-        }
+            // Kiểm tra trùng lặp tên kỳ thi
+            if (name && exams.some(exam => exam.name === name && exam.id !== editExamId)) {
+                errors.push('Tên kỳ thi đã tồn tại trong hệ thống!');
+            }
 
-        if (errors.length > 0) {
-            showToast('error', errors.map(e => `• ${e}`).join('<br>'));
-            return;
-        }
+            if (errors.length > 0) {
+                showToast('error', errors.map(e => `• ${e}`).join('<br>'));
+                return;
+            }
 
-        // Nếu không có lỗi, tiến hành cập nhật/thêm mới
-        if (editExamId) {
-            const idx = exams.findIndex(e => e.id === editExamId);
-            if (idx !== -1) {
-                exams[idx] = { ...exams[idx], course, name, date, description, partner, status };
+            // Nếu không có lỗi, tiến hành cập nhật/thêm mới
+            if (editExamId) {
+                const idx = exams.findIndex(e => e.id === editExamId);
+                if (idx !== -1) {
+                    exams[idx] = { ...exams[idx], course, name, date, description, partner, status };
+                    saveExams();
+                    searchExams(searchInput.value);
+                    closeModal();
+                    showToast('success', 'Cập nhật kỳ thi thành công!');
+                }
+            } else {
+                const newId = generateExamId();
+                exams.push({ id: newId, course, name, date, description, partner, status });
                 saveExams();
                 searchExams(searchInput.value);
                 closeModal();
-                showToast('success', 'Cập nhật kỳ thi thành công!');
+                showToast('success', 'Tạo kỳ thi thành công!');
             }
-        } else {
-            const newId = generateExamId();
-            exams.push({ id: newId, course, name, date, description, partner, status });
-            saveExams();
-            searchExams(searchInput.value);
-            closeModal();
-            showToast('success', 'Tạo kỳ thi thành công!');
-        }
-    };
+        };
+    }
 
     // Xử lý click nút Thêm
     openModalBtn.onclick = function() {
         editExamId = null;
         openModal(false);
     };
-    // Đóng modal
-    closeExamModalBtn.onclick = cancelExamModalBtn.onclick = closeModal;
 
     // Xử lý click Sửa/Xóa
     tableBody.onclick = function(e) {
@@ -470,6 +496,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Khởi tạo
     renderTable();
+
+    // Đảm bảo cập nhật thông tin tài khoản đăng nhập vào sidebar sau khi DOM đã sẵn sàng
+    const logingAccount = JSON.parse(localStorage.getItem('logingAccount'));
+    console.log(logingAccount);
+    if (logingAccount) {
+        // Avatar
+        const avatarImg = document.querySelector('.sidebar__profile-avatar');
+        if (avatarImg && logingAccount.avatar) {
+            avatarImg.src = logingAccount.avatar;
+        }
+        // Tên
+        const nameEl = document.querySelector('.sidebar__profile-name');
+        if (nameEl) {
+            nameEl.textContent = logingAccount.username;
+        }
+        // Email
+        const emailEl = document.querySelector('.sidebar__profile-email');
+        if (emailEl) {
+            emailEl.textContent = logingAccount.userEmail;
+        }
+    }
 }); 
 function logOut() {
     window.location.href = "Home-page.html";
